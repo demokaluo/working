@@ -1,0 +1,230 @@
+uname  #系统名称
+history #历史输入指令
+
+-----远程服务安装
+sudo apt install ssh
+service ssh start
+连接  ssh 用户名@地址
+×××××××××××××××××××××××××××××
+ln -s  a c #a软连接到c
+ls -li   #  查看到软连接
+ls -n  
+
+*******************************
+
+top 查看进程
+ps -ef|grep  apt
+查看进程，可以用kill -9 杀死
+
+——————————————————————————————————————————————
+——————————————————————————————————————————————
+### 安装TheFuck
+
+- 安装
+  - python
+  - pip
+  - python-dev
+- python自带
+- apt install python-pip
+- apt install python3-pip
+- apt install python3-dev
+- 安装thefuck
+  - sudo pip3 install thefuck
+- 配置环境变量
+  - 在用户家中
+    - 修改环境变量
+      - .bashrc
+    - gedit .bashrc
+      - 在最底部添加
+        - eval $(thefuck --alias)
+        - eval $(thefuck --alias FUCK)
+
+——————————————————————————————————————————————
+——————————————————————————————————————————————
+
+- | 管道符号
+  - 将上一个命令的输出转换为下一个命令的输入
+- grep 
+  - 搜索查询
+- kill
+  - 发送信号到指定进程，让进程自行关闭
+  - -9 
+    - 强杀
+- ping
+  - 测试网络联通
+
+×××××××××××××××××××××××××××××××
+
+- 三种模式
+- 行号
+  - 在底行模式
+    - set nu
+      - 设置行号
+- 配置文件
+  - 用户家中
+    - .vimrc
+    - 可以直接打命令，底行模式下的命令
+    - 显示行号
+      - set nu
+- 使用记录
+  - .viminfo
+
+××××××××××××××××××××××××××××××
+
+软件安装的三种方式：包管理工具apt安装、deb包安装（dpkg -i xxx.deb)、源码安装
+
+源码软件安装
+      - 下载源码
+        - 尽量去官网下载
+      - 构建源码
+        - make 
+        - 测试源码
+          - make test
+      - 安装源码
+        - make install
+
+×××××××××××××××××××××××××××××××××
+- mkdir
+    - 创建文件夹
+    - -p  可以创建多级目录
+  - rmdir
+    - 删除空目录
+  - rm
+    - 删除文件
+    - -d
+      - 删除空文件夹
+    - -r
+      - 递归删除
+    - -v
+      - 显示操作信息
+    - -f
+      - 强制删除
+      - 必杀技(不要卵用)
+        - rm -rf /*
+    - -i
+      - 交互式删除
+
+×××××××××××××××××××××××××××××××××××××××××
+  - ln
+    - 连接指令
+    - 默认连接是硬连接
+      - 一个文件的两个名字
+      - 一个inode挂载了两个文件名字
+      - 内容是完全同步
+    - -s 软连接
+      - 快捷方式
+      - 头尾相接
+        - 文件内容存的是文件的位置
+  - tar
+    - -c
+      - 创建
+    - -x
+      - 释放
+    - -z
+      - gz压缩，解压
+    - -J
+      - xz压缩
+      - 压缩比gz还优秀
+    - -v
+      - 显示操作信息
+    - -C
+      - 指定解压的位置（路径）
+    - 解包，打包
+      - tar -cf 压缩包名  文件内容
+        - 打包
+      - tar -xf 压缩包名
+        - 解包
+    - 压缩，解压缩
+      - tar -czf 
+        - gz压缩
+      - tar -cJf
+        - xz压缩
+      - tar -xzf
+        - gz解压
+      - tar -xzvf 
+        - gz解压并显示解压过程
+    - 解压使用的完整语法
+      - tar -xJvf  压缩文件 -C  目标路径
+        - 将xz压缩的文件解压到目标路径
+
+
+==================================================================================================
+开始一个工作区（参见：git help tutorial）
+   clone      克隆一个仓库到一个新目录
+   init       创建一个空的 Git 仓库或重新初始化一个已存在的仓库
+
+在当前变更上工作（参见：git help everyday）
+   add        添加文件内容至索引
+   mv         移动或重命名一个文件、目录或符号链接
+   reset      重置当前 HEAD 到指定状态
+   rm         从工作区和索引中删除文件
+
+检查历史和状态（参见：git help revisions）
+   bisect     通过二分查找定位引入 bug 的提交
+   grep       输出和模式匹配的行
+   log        显示提交日志
+   show       显示各种类型的对象
+   status     显示工作区状态
+
+扩展、标记和调校您的历史记录
+   branch     列出、创建或删除分支
+   checkout   切换分支或恢复工作区文件
+   commit     记录变更到仓库
+   diff       显示提交之间、提交和工作区之间等的差异
+   merge      合并两个或更多开发历史
+   rebase     在另一个分支上重新应用提交
+   tag        创建、列出、删除或校验一个 GPG 签名的标签对象
+
+协同（参见：git help workflows）
+   fetch      从另外一个仓库下载对象和引用
+   pull       获取并整合另外的仓库或一个本地分支
+   push       更新远程引用和相关的对象
+
+=================================================================================================
+
+
+git 的基本操作
+
+
+git --help
+
+git config --global user.name 'demokaluo'
+git config --list
+git config --global user.email 'demokaluo@1213144536qq.com'
+
+
+
+
+--将文件添加道仓库中
+
+git add readme.txt
+
+git commit -m "touch a new file"
+
+--拉取远端代码
+
+git pull
+=============================
+
+
+git config --global user.name demokaluo
+git config --global user.email 1213144536@qq.com
+
+ssh-keygen -t rsa -C 1213144536@qq.com   获取ssh公匙
+
+到/root/.ssh目录下，复制id_rsa.pub全部内容 (使用gedit格式打开，vim打开格式可能导致不可用）
+
+然后打开网页版本的github 讲公匙添加进去就可以了
+
+
+启动远程ssh服务
+  ssh -T git@github.com   
+
+××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××
+××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDpLECCfdFy+Z6vhkYGppyP/04+qJ7eZqmtwNM9lWScRHHhpNHI34FMv7mrBRLXj9EauHfEzYdq4s6t2T/ETiqD5BG36rGsETQklReftfHzdVcTAfceLQU/PKxICZIaRC7qGVAMGtEHaPAM+XQsT+kgwKxSSRjj9ipWS2mkJbRz61RJ98dmOfevGmKnFre0RtcjjMiZGZDd4Q/tTnvO765NQi8XfensDidCUv53 121314@qq.com
+×××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××
+×××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××
+
+
