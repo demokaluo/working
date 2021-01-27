@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				background: pink;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li><a href="#" onclick="pan(0)"><img src="图片/back.png"</a></li>
+			<li><a href="#" onclick="pan(1)"><img src="图片/back.png"</a></li>
+			<li><a href="#" onclick="pan(2)"><img src="图片/back.png"</a></li>
+			<li><a href="#" onclick="pan(3)"><img src="图片/back.png"</a></li>
+			<li><a href="#" onclick="pan(4)"><img src="图片/back.png"</a></li>
+			<li><a href="#" onclick="pan(5)"><img src="图片/back.png"</a></li>
+			<li><a href="#" onclick="pan(6)"><img src="图片/back.png"</a></li>
+			<li><a href="#" onclick="pan(7)"><img src="图片/back.png"</a></li>
+			<li><a href="#" onclick="pan(8)"><img src="图片/back.png"</a></li>
+			<li><a href="#" onclick="pan(9)"><img src="图片/back.png"</a></li>
+			<li><a href="#" onclick="pan(10)"><img src="图片/back.png"</a></li>
+			<li><a href="#" onclick="pan(11)"><img src="图片/back.png"</a></li>
+			<li><a href="#" onclick="pan(12)"><img src="图片/back.png"</a></li>
+			<li><a href="#" onclick="pan(13)"><img src="图片/back.png"</a></li>
+			<li><a href="#" onclick="pan(14)"><img src="图片/back.png"</a></li>
+			<li><a href="#" onclick="pan(15)"><img src="图片/back.png"</a></li>
+			
+		</ul>
+	</body>
+	<script type="text/javascript">
+		var imgs=document.getElementsByName('img');
+		
+		var tus=['tu1.png','tu2.png','tu3.png','tu4.png','tu5.png','tu6.png','tu7.png','tu8.png','tu9.png','tu10.png','tu11.png','tu12.png','tu13.png','tu14.png','tu15.png','tu15.png'];
+		var nums=[1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8];
+		var  pais=[];
+		var painums=[];
+		for(var i=15;i>=0;i--){
+			var ran=Math.floor(Math.random()*tus.length);
+			pais[i]=tus[ran];
+			painums[i]=nums[ran];
+			
+			tus.splice(ran,1)
+		}
+	</script>
+</html>

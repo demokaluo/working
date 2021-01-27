@@ -1,0 +1,41 @@
+{
+    "city": "北京",
+    "pm25": "26",
+    "weather": [
+        {
+            "date": "周四 08月15日",
+            "icon1": "day/leizhenyu",
+            "icon2": "night/zhongyu",
+            "weather": "雷阵雨转中雨",
+            "wind": "西南风微风",
+            "temp": "32 ~ 22℃"
+        },
+        {
+            "date": "周五",
+            "icon1": "day/qing",
+            "icon2": "night/qing",
+            "weather": "晴",
+            "wind": "西北风3-4级",
+            "temp": "31 ~ 22℃"
+        },
+        {
+            "date": "周六",
+            "icon1": "day/qing",
+            "icon2": "night/qing",
+            "weather": "晴",
+            "wind": "西北风微风",
+            "temp": "31 ~ 20℃"
+        },
+        {
+            "date": "周日",
+            "icon1": "day/qing",
+            "icon2": "night/qing",
+            "weather": "晴",
+            "wind": "北风微风",
+            "temp": "31 ~ 21℃"
+        }
+    ],
+    "date": "2019-08-15",
+    "id": "101010100",
+    "t": 1565798400
+} 

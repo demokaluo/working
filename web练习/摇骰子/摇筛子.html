@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>摇骰子</title>
+</head>
+<body>
+	<img src="sai1.png" width="100" height="100" id="pic1">
+	<img src="sai2.png" width="100" height="100" id="pic2">
+	<img src="sai3.png" width="100" height="100" id="pic3">
+	<button onclick="starts()">开始</button>
+	<button onclick="stops()">取消</button>
+
+	<script type="text/javascript">
+		var m;
+		var buttons = document.getElementsByTagName('button');
+		function starts(argument) {
+			m=setInterval(dong,100);
+			buttons[0].disabled=true; 
+			//防止连续点击越来越快 无法取消 点击之后 按钮disabled
+		}
+		function dong(){
+			//1-6
+			//生成三个随机数的原因是 防止三个骰子一样
+			var rand1 = Math.floor(Math.random()*6+1);
+			document.getElementById("pic1").src="sai"+rand1+'.png';
+			var rand2 = Math.floor(Math.random()*6+1);
+			document.getElementById("pic2").src="sai"+rand2+'.png';
+			var rand3 = Math.floor(Math.random()*6+1);
+			document.getElementById("pic3").src="sai"+rand3+'.png';
+		}
+		function stops(){
+			clearInterval(m);
+			buttons[0].disabled=false; 
+			//一旦停止以后 恢复开始的按钮的点击
+		}
+	</script>
+</body>
+</html>

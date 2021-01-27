@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="refresh" content="1"/>
+		<title>时间提醒</title>
+		<style>
+			#times{
+				color: white;
+				background-color: black;
+				width: 300px;
+				height: 50px;
+				float: right;
+				margin-top: 50px;
+				font-size: 20px;
+				font-family: "微软雅黑";
+			}
+		</style>
+		<script type="text/javascript">
+			function time(){
+				var box = new Date();
+				var year = box.getFullYear();
+				var month = box.getMonth();
+				month = month+1;
+				var days = box.getDate();
+				var hours = box.getHours();
+				var minutes = box.getMinutes();
+				var seconds = box.getSeconds();
+				//分钟秒 10以内  前面加上0
+				if(minutes<10){
+					minutes="0"+minutes;
+				}
+				
+				if(seconds<10){
+					seconds="0"+seconds;
+				}
+				
+				document.getElementById("times").innerHTML = "<center><p>"+year+"年"+month+"月"+days+"日"+hours+"时"+minutes+"分"+seconds+"秒"+"</p></center>";
+			
+			}
+			
+			
+			
+		</script>
+	</head>
+	<body onload="time()">
+		<div id="times">
+			
+		</div>
+	</body>
+</html>

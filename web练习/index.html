@@ -1,0 +1,102 @@
+<html>
+	<head>
+		<style>
+			*{margin:0 auto;padding:0}
+			ul{list-style:none;width:480px;height:620px}
+			ul li{width:100px;height:140px;margin-right:20px;margin-top:10px;float:left}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li><a href="#" onclick="pan(0)"><img src="back.png"/></a></li>
+			<li><a href="#" onclick="pan(1)"><img src="back.png"/></a></li>
+			<li><a href="#" onclick="pan(2)"><img src="back.png"/></a></li>
+			<li><a href="#" onclick="pan(3)"><img src="back.png"/></a></li>
+			<li><a href="#" onclick="pan(4)"><img src="back.png"/></a></li>
+			<li><a href="#" onclick="pan(5)"><img src="back.png"/></a></li>
+			<li><a href="#" onclick="pan(6)"><img src="back.png"/></a></li>
+			<li><a href="#" onclick="pan(7)"><img src="back.png"/></a></li>
+			<li><a href="#" onclick="pan(8)"><img src="back.png"/></a></li>
+			<li><a href="#" onclick="pan(9)"><img src="back.png"/></a></li>
+			<li><a href="#" onclick="pan(10)"><img src="back.png"/></a></li>
+			<li><a href="#" onclick="pan(11)"><img src="back.png"/></a></li>
+			<li><a href="#" onclick="pan(12)"><img src="back.png"/></a></li>
+			<li><a href="#" onclick="pan(13)"><img src="back.png"/></a></li>
+			<li><a href="#" onclick="pan(14)"><img src="back.png"/></a></li>
+			<li><a href="#" onclick="pan(15)"><img src="back.png"/></a></li>
+		</ul>
+	</body>
+	<script>
+		var imgs=document.getElementsByTagName('img');
+		
+		var tus=['tu1.png','tu2.png','tu3.png','tu4.png','tu5.png','tu6.png','tu7.png','tu8.png','tu9.png','tu10.png','tu11.png','tu12.png','tu13.png','tu14.png','tu15.png','tu16.png'];
+		var nums=[1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8];
+		var pais=[];
+		var painums=[];
+		for(var i=15;i>=0;i--){
+			var ran=Math.floor(Math.random()*tus.length);/*数组的长度是变化的量*/
+			/*imgs[i].src=tus[ran];*/
+			pais[i]=tus[ran];
+			painums[i]=nums[ran];
+
+			tus.splice(ran,1);
+			nums.splice(ran,1);
+			/*console.log(tus);*/
+		}
+		document.write(pais);
+		document.write(painums);
+		var oldpai=null;
+		var newpai=null;
+		var oldshu=0;
+		var newshu=-1;
+		var oldid=null;
+		var newid=null;
+		function pan(id){
+			
+			if(oldpai==null){
+				oldpai=pais[id];
+				oldshu=painums[id];
+				oldid=id;
+				imgs[id].src=oldpai;
+			}else{
+				newpai=pais[id];
+				imgs[id].src=newpai;
+				newshu=painums[id];
+				newid=id;
+				setTimeout("change()",1000);
+				
+			}
+		}
+		function change(){
+			
+			if(newpai==oldpai){
+					imgs[oldid].src="back.png";
+					newpai=null;
+					oldpai=null;
+					oldid=null;
+					newid=null;
+					oldshu=0;
+					newshu=-1;
+			}else if(newpai!=oldpai&&oldshu!=newshu){
+					imgs[oldid].src="back.png";
+					imgs[newid].src="back.png";
+					newpai=null;
+					oldpai=null;
+					oldid=null;
+					newid=null;
+					oldshu=0;
+					newshu=-1;
+					
+			}else if(newpai!=oldpai&&oldshu==newshu){
+					imgs[oldid].style.visibility="hidden";
+					imgs[newid].style.visibility="hidden";
+					newpai=null;
+					oldpai=null;
+					oldid=null;
+					newid=null;
+					oldshu=0;
+					newshu=-1;
+			}
+		}
+	</script>
+</html>

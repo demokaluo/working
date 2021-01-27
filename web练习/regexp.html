@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>regexp</title>
+		<script>
+//			var reg = new RegExp('box','im');
+//			var str = "shehuiyuan is a big BOX sorry,\n his BOX id too little";
+////			alert(reg.test(str));//只返回true 或者false
+////			alert(reg.exec(str));//返回匹配到的内容
+//			var arrs = reg.exec(str);
+//			alert(arrs.length);
+
+//			var patterns = /box/ig;
+//			var str = "shehuiyuan is a big BOX sorry,\n his BOX id too little";
+////			alert(patterns.test(str));
+//			alert(patterns.exec(str));
+//			var patterns = /,/ig;
+//			var str = "shehuiyuan is a big BOX sorry,\n his box id too little";
+////			alert(str.match(patterns));//BOX BOX
+////			alert(str.search(patterns));//返回第一匹配到的目标元素开始的下标位置
+////			alert(str.replace(patterns,'kangbazi'));
+////			document.write(str.split(patterns));
+//			var patterns = /xoox/;
+//			var str = "现在好好的xoox是为了更好地xoox";
+//			patterns.test(str); //先要写匹配
+////			alert(RegExp.input);
+////			alert(RegExp.lastMatch);
+//			alert(RegExp.leftContext);
+
+//			var patterns = /^1[3-9]\d{9}$/;
+//			var str = '13888888888';
+//			alert(patterns.test(str));
+			//kangbazi123.com
+			//test_123@qq.com
+			//test.com@qq.com
+			//test-123@163.com
+			//test-123 
+			//163
+			//com
+//			var patterns = /^([\w.-]+)\@([a-zA-Z0-9.-]+)\.([\w]{2,3})$/;
+//			var str = 'shehuiyuan666.cn@baidu.com';
+//			alert(patterns.test(str));
+			var patterns = /^\s(.+?)\s$/;
+			var str = " shehuiyuan ";
+			document.write(str.replace(patterns,'<strong>$1</strong>'));
+			
+			
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

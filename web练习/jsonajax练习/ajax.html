@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ajax</title>
+		<script type="text/javascript" src="js/ajax.js"></script>
+		<script type="text/javascript">
+			window.onload = function(){
+				var btn=document.getElementById('btn');
+//				btn.onclick = function(){
+//					ajax("aa.txt",function(str){
+//						//str就是服务器返回的数据 通过参数传递过来
+//						var arr = str;
+//						arr = arr.split(',');
+//						alert(arr[3]);
+//					},function(){
+//						alert("失败");
+//					});
+//				}
+				
+				btn.onclick = function(){
+					ajax('weather.txt?zhihong='+new Date().getTime(),function(str){
+						var text=JSON.parse(str);
+//						alert(text.weather[0].weather);
+						var test= '';
+						test += "<tr>";
+						test +='<td>'+text.city+'</td>';
+						test +='<td>'+text.weather[0].weather+'</td>';
+						test += "</tr>";
+						document.getElementById('citysearch').innerHTML = test;
+					},function(){
+						alert("失败");
+					});
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h1>天气</h1>
+		<table border="1" >
+			<tr>
+				<th>城市</th>
+				<th>天气</th>
+			</tr>
+			<tbody id="citysearch">
+				
+			</tbody>
+		</table>
+		<div id="box">
+			<input type="button" value="读取" id="btn"/>
+		</div>
+		
+	</body>
+</html>

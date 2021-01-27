@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#photo{
+				width: 500px;
+				height: 300px;
+				border:  solid;
+				position: relative;
+			}
+			#photo img{
+				border: solid;
+				position: absolute;
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+		<div id="photo">
+			
+		
+<!--<img src="图片/cf3e872973651007e7617b200cd41f31.jpeg"style="width: 200px;"/>
+<img src="图片/0870461d8f48efef8047ede6f8af5c52.jpeg"width="200px" style="float: right;" />
+<img src="图片/114ebc04f9a4a634011d161a7e35451e.jpeg" width="200px"/>
+<img src="图片/2b06e2d7e233c5fb13b80d204928f073.jpg"width="200px"/>
+<img src="图片/8c2d343a272be819e1f3827aed4b265f.jpeg"width="400px" />
+<img src="图片/2b06e2d7e233c5fb13b80d204928f073.jpg" width="100px"/>-->
+
+<br />
+<br /><br />
+<br /><br /><br />jaj 
+jjj 
+		</div>
+		<script type="text/javascript">
+			document.write('-----进入js练习环节----');
+			var a=10;
+			console.log(Number('ka234'));
+			console.log(Number(''));
+			console.log();
+			console.log(a.toString(2));
+			console.log(a.toString(8));
+			console.log(a.toString(16));
+			console.log('======我是分割线===========')
+//			function sum(a,b){
+//				return a+b;
+//			}
+//			console.log('----->加法运算：'+sum(3,5));
+//			function test(){
+//				return arguments[0]+arguments[3];
+////				return arguments.length;
+//			}
+//			console.log(test(1,2,3,4,5,6,7,8));
+//			var box= {
+//				'name':'张霄',
+//				'age':18,
+//				start:function(){
+//					alert('今天的活动要开始了');
+//				}
+//			}
+//			console.log(box.name);
+//			console.log(box.age);
+////			box.start();
+//			var box = new Array(
+//				110,
+//				null,
+//				{
+//					'name':'旗木卡卡西'
+//				}
+//			)
+//			console.log(box);
+//			console.log(box[0]);
+//			console.log(box[2]);
+//			box.push('hello','kaka','张杰');
+//			console.log(box);
+//			
+//			box.pop();
+//			console.log(box);
+//			box.pop();
+//			box.pop();
+//			console.log(box);
+//			box.shift()
+//			box.unshift('第一个','第二个','第三个');
+//			box.shift();
+//			console.log(box);
+//			if(confirm('您确定要关闭么')){
+//				alert('您点击了确定');
+//			}else{
+//				alert('您点击了取消');
+//				
+//			}
+////			close();
+//			setTimeout(function(){
+//				alert('我是大哥哥');
+//			},2000);
+//			clearTimeout(test);
+//
+//var box = setInterval(function(){
+//				console.log('我是間歇调用');
+//			},1000);
+//alert('helloqq');
+//			var box = setInterval(function(){
+//				console.log('开始游戏了');
+//			},2000);
+//			
+//			alert(history.length); //历史记录的条数 
+
+function back(){
+	history.back();
+}
+
+function forward(){
+	history.forward();
+}
+
+function go(num){
+	history.go(num);
+}
+
+
+
+		</script>
+<!--<a href="http://www.qfedu.com" target="_self">千锋</a>-->
+<!--<a href="javascript:back()">后退</a>
+<a href="javascript:forward()">前进</a>
+<a href="javascript:go(2)">前进到2</a>-->
+<div class="tet" title="box1">test</div>
+<div class="tet" title="box1">test</div>
+<div class="tet" title="box1">test</div>
+<div id="box" style="color:orange;">我是世界最美的美男子</div>
+	<script type="text/javascript">
+		var tests = document.getElementsByClassName('tet');	
+		for(var i=0;i<tests.length;i++){
+			tests[i].setAttribute("style","width:100px;height:100px;background: blue;");
+		}
+//		for (var i=0;i<tests.length;i++) {
+//			tests.removeAttribute('style');
+//			
+//		}
+		for(var i=0;i<tests.length;i++){
+			console.log(tests[i].innerHTML);
+		}
+//		alert(tests.nodeType);
+		var test = document.getElementById('box');
+		console.log(test.nodeName);
+		console.log(test.nodeType);
+		console.log(test.nodeValue);
+		console.log(test.attributes[0].nodeType);
+		//将任意的节点插入到节点中，我们就是获胜的一方
+		console.log(test.attributes[0].nodeName);
+		console.log(test.attributes[0].nodeValue);
+		
+		console.log(test.childNodes[0].nodeName);
+		console.log(test.childNodes[0].nodeType);
+		console.log(test.childNodes[0].nodeValue);
+		console.log('----------》节点的操作就此结束了');
+		//节点的属性有 ---元素节点  属性节点  文本节点 三个
+		console.log('---现在开始节点的操作了');
+		console.log('激动人心的时刻到来了');
+		var test = document.getElementById('box');
+		var span = document.createElement('span');
+		test.appendChild(span);
+		var tests = document.createTextNode('今天是个好日子');
+		span.appendChild(tests);
+		span.appendChild(tests);
+		console.log('已经添加上了');
+		var clone = test.cloneNode();
+		var clone1 = test.cloneNode(true);
+//		alert(clone.nodeType);
+		test.parentNode.appendChild(clone);
+		console.log('heh');
+		console.log('节点的类型 ----元素节点，属性节点，文本节点');
+		test.onclick = function(){
+			alert('给他绑定了一个事件');
+		}
+		window.onload = function(){
+			alert('给页面绑定了一个事件');
+		}
+		window.onunload = function(){
+			alert('移出去后也有的事件');
+		}
+</script>
+	
+	
+	
+	
+	
+	
+</div>
+	</body>
+</html>
+
+

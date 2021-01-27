@@ -1,0 +1,101 @@
+﻿<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>随机点名器</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #main {
+            margin: 100px;
+            background: #abcdef;
+            width: 520px;
+            padding: 50px;
+            border-radius: 20px 20px 20px 20px;
+            box-shadow: 0 2px 12px #666666;
+        }
+
+        #box {
+            background: #ff5511;
+            margin: 50px;
+            padding: 20px;
+            font-size: 55px;
+            font-weight: bold;
+            border-radius: 15px 15px 15px 15px;
+            box-shadow: 0 2px 12px #666666;
+        }
+
+        #bt {
+            width: 100px;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: green;
+            border-radius: 8px 8px 8px 8px;
+            box-shadow: 0 2px 12px #666666;
+            cursor: pointer;
+            padding: 5px;
+        }
+        body{
+        	background: url(图片/114ebc04f9a4a634011d161a7e35451e.jpeg);
+        }
+    </style>
+    <script>
+        var namelist = [
+            "王楷元","吴国俊","李欣东","陈阳","朱鹏泽","董子源","何有龙","张士杰", "郭志宏", "李文鹏", "张恩晨","姜坤", "牛小耕", "李子坤"
+        ];
+//      alert(namelist.length);
+        var mytime=null;
+        
+        function doit(){
+        	//两种情况  
+        	var bt= document.getElementById('bt');
+        	if(mytime==null){
+        		//转的时候  对应的是 红色 停止  
+        		bt.innerHTML = "停止";
+        		bt.style.backgroundColor="red";
+        		show();
+        	}else{
+        		//停的时候 对应的是 绿色开始 
+        		bt.innerHTML = "开始";
+        		bt.style.backgroundColor="green";
+        		clearTimeout(mytime);
+        		mytime=null;
+        	}
+        	
+        }
+       
+        function show(){
+        	//因为要把名字随机写到这里 
+        	var box = document.getElementById('box');
+        	//生成随机值  
+        	var rand = Math.floor(Math.random()*namelist.length);
+        	box.innerHTML=namelist[rand];
+        	
+        	mytime=setTimeout("show()",50);
+        
+        }
+    </script>
+</head>
+<body>
+<center>
+    <div id="main">
+        <div id="box">随机点名器</div>
+        <button id="bt" onclick="doit()">开 始</button>
+    </div>
+</center>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

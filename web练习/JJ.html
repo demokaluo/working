@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>JSON</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script type="text/javascript">
+			var shehuiyuan = [{'name':'a','age':18},{'name':' b':19}];
+			var test = JSON.stringify(shehuiyuan);//单引号自动转换为双引号
+			document.write(test);
+			
+		</script>
+	</head>
+	
+	
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function){
+				$('#btn').click(function){
+					$('body div').css("background","#aabbcc");
+				}
+				
+			}
+		</script>
+	</body>
+
+</html>
